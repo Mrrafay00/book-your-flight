@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Flight - Find & Book Flights Easily</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Logo and Site Name -->
+        <div>
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Book Your Flight Logo" width="50" height="50">
+                <span>Book Your Flight</span>
+            </a>
+        </div>
+        
+        <!-- Main Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/flights.html">Flights</a></li>
+                <li><a href="pages/my-bookings.html">My Bookings</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- User Account Links -->
+        <div>
+            <a href="pages/login.html">Login</a>
+            <a href="pages/register.html">Register</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section>
+            <h1>Book Your Flight in Minutes</h1>
+            <p>Find the best flight deals and book your journey with ease</p>
+            
+            <!-- Flight Search Form -->
+            <form id="flightSearchForm" action="pages/flights.html" method="GET">
+                <!-- Trip Type Selection -->
+                <div>
+                    <label>
+                        <input type="radio" name="tripType" value="one-way" checked>
+                        One Way
+                    </label>
+                    <label>
+                        <input type="radio" name="tripType" value="round-trip">
+                        Round Trip
+                    </label>
+                    <label>
+                        <input type="radio" name="tripType" value="multi-city">
+                        Multi City
+                    </label>
+                </div>
+                
+                <!-- Route Information -->
+                <div>
+                    <div>
+                        <label for="from">From</label>
+                        <input type="text" id="from" name="from" placeholder="City or airport" required>
+                        <button type="button">Current Location</button>
+                    </div>
+                    
+                    <div>
+                        <label for="to">To</label>
+                        <input type="text" id="to" name="to" placeholder="City or airport" required>
+                    </div>
+                </div>
+                
+                <!-- Date Selection -->
+                <div>
+                    <div>
+                        <label for="departureDate">Departure</label>
+                        <input type="date" id="departureDate" name="departureDate" required>
+                    </div>
+                    
+                    <div>
+                        <label for="returnDate">Return</label>
+                        <input type="date" id="returnDate" name="returnDate" disabled>
+                    </div>
+                </div>
+                
+                <!-- Passenger Selection -->
+                <div>
+                    <label for="passengers">Passengers</label>
+                    <select id="passengers" name="passengers">
+                        <option value="1">1 Passenger</option>
+                        <option value="2" selected>2 Passengers</option>
+                        <option value="3">3 Passengers</option>
+                        <option value="4">4 Passengers</option>
+                        <option value="5">5 Passengers</option>
+                        <option value="6">6 Passengers</option>
+                    </select>
+                </div>
+                
+                <!-- Cabin Class -->
+                <div>
+                    <label for="cabinClass">Cabin Class</label>
+                    <select id="cabinClass" name="cabinClass">
+                        <option value="economy">Economy</option>
+                        <option value="premium-economy">Premium Economy</option>
+                        <option value="business">Business</option>
+                        <option value="first">First Class</option>
+                    </select>
+                </div>
+                
+                <!-- Search Button -->
+                <div>
+                    <button type="submit">
+                        Search Flights
+                        <span>→</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Features Section -->
+        <section>
+            <h2>Why Book With Us?</h2>
+            <div>
+                <div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We guarantee the lowest prices for all flights</p>
+                </div>
+                <div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer service</p>
+                </div>
+                <div>
+                    <h3>Easy Cancellation</h3>
+                    <p>Flexible cancellation and rescheduling</p>
+                </div>
+                <div>
+                    <h3>Safe & Secure</h3>
+                    <p>Your data and payments are protected</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Destinations -->
+        <section>
+            <h2>Popular Destinations</h2>
+            <div>
+                <div>
+                    <img src="assets/images/destinations/new-york.jpg" alt="New York" width="300" height="200">
+                    <h3>New York</h3>
+                    <p>From $299</p>
+                    <a href="pages/flights.html?to=new-york">Book Now</a>
+                </div>
+                <div>
+                    <img src="assets/images/destinations/london.jpg" alt="London" width="300" height="200">
+                    <h3>London</h3>
+                    <p>From $399</p>
+                    <a href="pages/flights.html?to=london">Book Now</a>
+                </div>
+                <div>
+                    <img src="assets/images/destinations/tokyo.jpg" alt="Tokyo" width="300" height="200">
+                    <h3>Tokyo</h3>
+                    <p>From $599</p>
+                    <a href="pages/flights.html?to=tokyo">Book Now</a>
+                </div>
+                <div>
+                    <img src="assets/images/destinations/dubai.jpg" alt="Dubai" width="300" height="200">
+                    <h3>Dubai</h3>
+                    <p>From $449</p>
+                    <a href="pages/flights.html?to=dubai">Book Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers -->
+        <section>
+            <h2>Special Offers</h2>
+            <div>
+                <div>
+                    <h3>Summer Sale</h3>
+                    <p>Up to 40% off on summer destinations</p>
+                    <a href="pages/flights.html?promo=summer-sale">View Deals</a>
+                </div>
+                <div>
+                    <h3>Last Minute Deals</h3>
+                    <p>Great prices on upcoming flights</p>
+                    <a href="pages/flights.html?promo=last-minute">View Deals</a>
+                </div>
+                <div>
+                    <h3>Student Discount</h3>
+                    <p>15% off for students with valid ID</p>
+                    <a href="pages/flights.html?promo=student">View Deals</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section>
+            <h2>Get the Best Deals</h2>
+            <p>Subscribe to our newsletter for exclusive offers</p>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+                <p>By subscribing, you agree to our Privacy Policy</p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Quick Links -->
+        <div>
+            <div>
+                <h3>Book Your Flight</h3>
+                <p>Your trusted partner for flight bookings since 2024</p>
+            </div>
+            
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="pages/about.html">About Us</a></li>
+                    <li><a href="pages/careers.html">Careers</a></li>
+                    <li><a href="pages/press.html">Press</a></li>
+                    <li><a href="pages/blog.html">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="pages/help.html">Help Center</a></li>
+                    <li><a href="pages/contact.html">Contact Us</a></li>
+                    <li><a href="pages/faq.html">FAQ</a></li>
+                    <li><a href="pages/feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="pages/terms.html">Terms of Service</a></li>
+                    <li><a href="pages/cookies.html">Cookie Policy</a></li>
+                    <li><a href="pages/accessibility.html">Accessibility</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Connect With Us</h4>
+                <div>
+                    <a href="https://facebook.com" aria-label="Facebook">FB</a>
+                    <a href="https://twitter.com" aria-label="Twitter">TW</a>
+                    <a href="https://instagram.com" aria-label="Instagram">IG</a>
+                    <a href="https://linkedin.com" aria-label="LinkedIn">IN</a>
+                </div>
+                <p>Email: support@bookyourflight.com</p>
+                <p>Phone: +1 (800) 123-4567</p>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div>
+            <p>&copy; 2024 Book Your Flight. All rights reserved.</p>
+            <p>
+                <a href="pages/sitemap.html">Sitemap</a> | 
+                <a href="pages/affiliates.html">Affiliates</a> | 
+                <a href="pages/partners.html">Partners</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
