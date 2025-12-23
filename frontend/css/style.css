@@ -1,0 +1,815 @@
+/* ============================================
+   BOOK YOUR FLIGHT - MAIN STYLESHEET
+   ============================================ */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Skip to main content for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo and Brand */
+header > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+header > div:first-child a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+header > div:first-child img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+header > div:first-child img:hover {
+    transform: scale(1.05);
+}
+
+header > div:first-child span {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Navigation Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #dbeafe;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* User Account Links */
+header > div:last-child {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+}
+
+header > div:last-child a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+header > div:last-child a:first-child {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header > div:last-child a:last-child {
+    background: white;
+    color: #2563eb;
+}
+
+header > div:last-child a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Hero Section */
+main > section:first-child {
+    background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.9)),
+                url('../assets/images/hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+main > section:first-child h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+main > section:first-child p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Flight Search Form */
+#flightSearchForm {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Trip Type Selection */
+#flightSearchForm > div:first-child {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+#flightSearchForm > div:first-child label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+#flightSearchForm > div:first-child label:hover {
+    background: #e2e8f0;
+}
+
+#flightSearchForm > div:first-child input[type="radio"] {
+    accent-color: #2563eb;
+    width: 18px;
+    height: 18px;
+}
+
+/* Form Rows */
+#flightSearchForm > div:not(:first-child) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Groups */
+#flightSearchForm > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#flightSearchForm label {
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Input Styles */
+#flightSearchForm input[type="text"],
+#flightSearchForm input[type="date"],
+#flightSearchForm select {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+#flightSearchForm input[type="text"]:focus,
+#flightSearchForm input[type="date"]:focus,
+#flightSearchForm select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Current Location Button */
+#flightSearchForm button[type="button"] {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    color: #475569;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#flightSearchForm button[type="button"]:hover {
+    background: #e2e8f0;
+}
+
+/* Search Button */
+#flightSearchForm > div:last-child {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#flightSearchForm > div:last-child button[type="submit"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+#flightSearchForm > div:last-child button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+#flightSearchForm > div:last-child button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+main > section:nth-child(2) {
+    margin-bottom: 3rem;
+}
+
+main > section:nth-child(2) h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+}
+
+main > section:nth-child(2) > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+main > section:nth-child(2) > div > div {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main > section:nth-child(2) > div > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+main > section:nth-child(2) h3 {
+    color: #2563eb;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   DESTINATIONS SECTION
+   ============================================ */
+main > section:nth-child(3) {
+    margin-bottom: 3rem;
+}
+
+main > section:nth-child(3) h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+}
+
+main > section:nth-child(3) > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+main > section:nth-child(3) > div > div {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+main > section:nth-child(3) > div > div:hover {
+    transform: translateY(-8px);
+}
+
+main > section:nth-child(3) img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+main > section:nth-child(3) > div > div > div {
+    padding: 1.5rem;
+}
+
+main > section:nth-child(3) h3 {
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+main > section:nth-child(3) p {
+    color: #64748b;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+main > section:nth-child(3) a {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+main > section:nth-child(3) a:hover {
+    background: #1d4ed8;
+}
+
+/* ============================================
+   SPECIAL OFFERS SECTION
+   ============================================ */
+main > section:nth-child(4) {
+    margin-bottom: 3rem;
+}
+
+main > section:nth-child(4) h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+}
+
+main > section:nth-child(4) > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+main > section:nth-child(4) > div > div {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid #f59e0b;
+}
+
+main > section:nth-child(4) h3 {
+    color: #92400e;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+main > section:nth-child(4) p {
+    color: #854d0e;
+    margin-bottom: 1.5rem;
+}
+
+main > section:nth-child(4) a {
+    display: inline-block;
+    background: #d97706;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+main > section:nth-child(4) a:hover {
+    background: #b45309;
+}
+
+/* ============================================
+   NEWSLETTER SECTION
+   ============================================ */
+main > section:last-child {
+    background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+main > section:last-child h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+main > section:last-child > p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#newsletterForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#newsletterForm input[type="email"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+#newsletterForm button[type="submit"] {
+    background: white;
+    color: #0f766e;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#newsletterForm button[type="submit"]:hover {
+    background: #f0fdfa;
+    transform: translateY(-2px);
+}
+
+#newsletterForm p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+footer {
+    background: #1e293b;
+    color: #cbd5e1;
+    padding: 3rem 2rem 1rem;
+    margin-top: auto;
+}
+
+/* Footer Grid */
+footer > div:first-child {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+footer h3,
+footer h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+}
+
+footer h4 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 0.75rem;
+}
+
+footer ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Social Media Links */
+footer > div:first-child > div:last-child > div {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer > div:first-child > div:last-child > div a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+footer > div:first-child > div:last-child > div a:hover {
+    background: #2563eb;
+    transform: translateY(-3px);
+}
+
+/* Copyright Area */
+footer > div:last-child {
+    border-top: 1px solid #475569;
+    padding-top: 1.5rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer > div:last-child p {
+    margin-bottom: 0.5rem;
+}
+
+footer > div:last-child a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+footer > div:last-child a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    /* Header adjustments */
+    header {
+        padding: 1rem;
+    }
+    
+    nav ul {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    header > div:last-child {
+        justify-content: center;
+    }
+    
+    /* Hero section */
+    main > section:first-child h1 {
+        font-size: 2.2rem;
+    }
+    
+    main > section:first-child {
+        padding: 2rem 1rem;
+    }
+    
+    /* Form adjustments */
+    #flightSearchForm {
+        padding: 1.5rem;
+    }
+    
+    #flightSearchForm > div:not(:first-child) {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Main content padding */
+    main {
+        padding: 1rem;
+    }
+    
+    /* Section headings */
+    main > section h2 {
+        font-size: 2rem;
+    }
+    
+    /* Features and destinations grid */
+    main > section:nth-child(2) > div,
+    main > section:nth-child(3) > div,
+    main > section:nth-child(4) > div {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Newsletter form */
+    #newsletterForm {
+        width: 100%;
+    }
+    
+    /* Footer adjustments */
+    footer {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    footer > div:first-child {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    footer > div:first-child > div:last-child > div {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further mobile adjustments */
+    main > section:first-child h1 {
+        font-size: 1.8rem;
+    }
+    
+    #flightSearchForm > div:first-child {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    #flightSearchForm > div:first-child label {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+    
+    /* Search button full width */
+    #flightSearchForm > div:last-child button[type="submit"] {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Smaller section padding */
+    main > section {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* Print Styles */
+@media print {
+    header,
+    footer,
+    #newsletterForm,
+    main > section:nth-child(4),
+    main > section:last-child {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    main {
+        padding: 0;
+    }
+    
+    #flightSearchForm {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
